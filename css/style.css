@@ -1,0 +1,28 @@
+body{
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.task img{
+	float:right;
+	border: 1px solid grey;
+}
+
+.task{
+	border: 1px solid grey;
+	margin-top: 1em;
+}
+
+.sort-params{
+	background: linear-gradient(to top, #ddd, #eee, #ddd);
+	padding: 1em;
+}
+
+.main-words{
+	font-weight: bold;
+}
+
+.sort-var{
+	margin-left: 1.5em;
+	display: inline-block;
+}
