@@ -12,19 +12,13 @@
 		}
 		public function action_index()
 		{
-			$id = 0;
-			$limit1 = 0;
-			$page = 1;
-			if (!empty($_GET['p']))
-				$page = (int)$_GET['p'];
-			$limit1 = ($page - 1) * 3;
-			$order_by = 'username';
-			if (!empty($_GET['sort']))
-				$order_by = $_GET['sort'];
-			$order_direction = 'asc';
-			if (!empty($_GET['sortdir']))
-				$order_direction = $_GET['sortdir'];
-			$data = $this->model->get_data($id, $limit1, $order_by, $order_direction);
+			$page = $_GET['p'] ?: 1;
+			$data = $this->model->get_data(
+                0,
+                ($page - 1) * 3,
+                $_GET['sort'] ?: 'username',
+                $_GET['sortdir'] ?: 'asc'
+            );
 			$data['page'] = $page;
 			$this->view->generate_index($data);
 		}
